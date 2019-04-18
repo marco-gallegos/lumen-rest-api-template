@@ -1,4 +1,4 @@
-# Lumen API Boilerplate whit JWT Auth
+# Lumen API Boilerplate with JWT Auth
 
 Forgive my poor English.
 
@@ -20,6 +20,24 @@ lumen 5.x please look appropriate branch
 - a good article [http://oomusou.io/laravel/laravel-architecture](http://oomusou.io/laravel/laravel-architecture/)
 
 ## Installation
+
+``` bash
+$ git clone https://github.com/marco-gallegos/lumen-api-boilerplate-jwt.git
+$ composer install
+$ cp .env.example .env
+$ php artisan jwt:secret
+$ vim .env
+  DB_*
+    configure your database access
+  APP_KEY
+    key:generate is abandoned in lumen, so do it yourself
+    md5(uniqid())，str_random(32) etc.，maybe use jwt:secret and copy it
+
+$ php artisan migrate
+$ generate api doc like this "apidoc -i App/Http/Controller/Api/v1 -o public/apidoc"
+```
+
+## Demo Installation
 
 ``` bash
 $ git clone https://github.com/marco-gallegos/lumen-api-boilerplate-jwt.git
