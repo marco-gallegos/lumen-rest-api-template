@@ -12,7 +12,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        // 填充好多用户
-        factory(User::class, 10)->create();
+        User::create([
+            'name' => "Administrador",
+            'email' => "admin@admin.com.mx",
+            'password' => app('hash')->make("admin12345"),
+            'created_at' => Carbon\Carbon::now(),
+            'updated_at' => Carbon\Carbon::now(),
+        ]);
     }
 }

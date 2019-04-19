@@ -33,65 +33,23 @@ $ vim .env
     key:generate is abandoned in lumen, so do it yourself
     md5(uniqid())，str_random(32) etc.，maybe use jwt:secret and copy it
 
-$ php artisan migrate
-$ generate api doc like this "apidoc -i App/Http/Controller/Api/v1 -o public/apidoc"
-```
-
-## Demo Installation
-
-``` bash
-$ git clone https://github.com/marco-gallegos/lumen-api-boilerplate-jwt.git
-$ composer install
-$ cp .env.example .env
-$ php artisan jwt:secret
-$ vim .env
-  DB_*
-    configure your database access
-  APP_KEY
-    key:generate is abandoned in lumen, so do it yourself
-    md5(uniqid())，str_random(32) etc.，maybe use jwt:secret and copy it
-
-$ php artisan migrate
-$ php artisan db:seed
+$ php artisan migrate --seed
 $ generate api doc like this "apidoc -i App/Http/Controller/Api/v1 -o public/apidoc"
 ```
 
 ## Main Features
 
 
-
-## REST API DESIGN
-
-just a demo for rest api design
-
-``` bash
-  demo： user, post, comment
-  get    /api/posts              	 post index
-  post   /api/posts              	 create a post
-  get    /api/posts/5            	 post detail
-  put    /api/posts/5            	 replace a post
-  patch  /api/posts/5            	 update part of a post
-  delete /api/posts/5            	 delete a post
-  get    /api/posts/5/comments     comment list of a post
-  post   /api/posts/5/comments     add a comment
-  get    /api/posts/5/comments/8   comment detail
-  put    /api/posts/5/comments/8   replace a comment
-  patch  /api/posts/5/comments/8   update part of a comment
-  delete /api/posts/5/comments/8   delete a comment
-  get    /api/users/4/posts        post list of a user
-  get    /api/user/posts           post list of current user
-```
-
 ## FAQ
 
 <details>
-  <summary>about jwt</summary>
+  <summary>About JWT</summary>
 
   There is no session and auth guard in lumen 5.2, so attention `config/auth.php`. Also user model must implement `Tymon\JWTAuth\Contracts\JWTSubject`
 </details>
 
 <details>
-  <summary>how to use mail</summary>
+  <summary>How to use mail</summary>
 
 - composer require `illuminate/mail` and `guzzlehttp/guzzle`
 - register email service in `bootstrap/app.php` or `some provider`
@@ -100,7 +58,7 @@ just a demo for rest api design
 </details>
 
 <details>
-  <summary>how to user transformer </summary>
+  <summary>How to user transformer </summary>
 
   transformer is a layer help you format you resource and their relationship.
 

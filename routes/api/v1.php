@@ -48,25 +48,6 @@ $api->version('v1', [
         'uses' => 'UserController@show',
     ]);
 
-    // POST
-    // post list
-    $api->get('posts', [
-        'as' => 'posts.index',
-        'uses' => 'PostController@index',
-    ]);
-    // post detail
-    $api->get('posts/{id}', [
-        'as' => 'posts.show',
-        'uses' => 'PostController@show',
-    ]);
-
-    // POST COMMENT
-    // post comment list
-    $api->get('posts/{postId}/comments', [
-        'as' => 'posts.comments.index',
-        'uses' => 'CommentController@index',
-    ]);
-
     /*
      * 对于authorizations 并没有保存在数据库，所以并没有id，那么对于
      * 刷新（put) 和 删除（delete) 我没有想到更好的命名方式
@@ -109,47 +90,6 @@ $api->version('v1', [
             'uses' => 'UserController@editPassword',
         ]);
 
-        // POST
-        // user's posts index
-        $api->get('user/posts', [
-            'as' => 'user.posts.index',
-            'uses' => 'PostController@userIndex',
-        ]);
-        // create a post
-        $api->post('posts', [
-            'as' => 'posts.store',
-            'uses' => 'PostController@store',
-        ]);
-        // update a post
-        $api->put('posts/{id}', [
-            'as' => 'posts.update',
-            'uses' => 'PostController@update',
-        ]);
-        // update part of a post
-        $api->patch('posts/{id}', [
-            'as' => 'posts.patch',
-            'uses' => 'PostController@patch',
-        ]);
-        // delete a post
-        $api->delete('posts/{id}', [
-            'as' => 'posts.destroy',
-            'uses' => 'PostController@destroy',
-        ]);
-
-        // POST COMMENT
-        // create a comment
-        $api->post('posts/{postId}/comments', [
-            'as' => 'posts.comments.store',
-            'uses' => 'CommentController@store',
-        ]);
-        $api->put('posts/{postId}/comments/{id}', [
-            'as' => 'posts.comments.update',
-            'uses' => 'CommentController@update',
-        ]);
-        // delete a comment
-        $api->delete('posts/{postId}/comments/{id}', [
-            'as' => 'posts.comments.destroy',
-            'uses' => 'CommentController@destroy',
-        ]);
+        
     });
 });
