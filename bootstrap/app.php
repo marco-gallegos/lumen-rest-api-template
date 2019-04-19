@@ -108,6 +108,13 @@ $app->singleton(Illuminate\Auth\AuthManager::class, function ($app) {
     return $app->make('auth');
 });
 
+//list api routes
+if (class_exists(CbxTechCorp\LumenApiRoutesList\ApiRoutesCommandServiceProvider::class)) {
+    $app->register(CbxTechCorp\LumenApiRoutesList\ApiRoutesCommandServiceProvider::class);
+};
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

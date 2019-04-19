@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30fab5dc7ce76229189dbfd313ef09bd",
+    "content-hash": "f39b48fcfa79d5035f361630e445b41c",
     "packages": [
         {
             "name": "dingo/api",
@@ -4510,6 +4510,52 @@
     ],
     "packages-dev": [
         {
+            "name": "cbxtechcorp/lumen-api-routes-list",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marco-gallegos/lumen-api-route-list.git",
+                "reference": "09e1ab904a6d3de6e66edf482e052f98035ae552"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marco-gallegos/lumen-api-route-list/zipball/09e1ab904a6d3de6e66edf482e052f98035ae552",
+                "reference": "09e1ab904a6d3de6e66edf482e052f98035ae552",
+                "shasum": ""
+            },
+            "require": {
+                "dingo/api": "^2",
+                "illuminate/support": "5.*",
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CbxTechCorp\\LumenApiRoutesList\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marco A. Gallegos",
+                    "email": "ma_galeza@hotmail.com",
+                    "homepage": "https://github.com/marco-gallegos"
+                }
+            ],
+            "description": "Display the route list of dingo api configuration",
+            "keywords": [
+                "Dingo API",
+                "Microservice",
+                "lumen",
+                "rest",
+                "route list"
+            ],
+            "time": "2019-04-19T07:07:56+00:00"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.2.0",
             "source": {
@@ -5884,7 +5930,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "palanik/lumen-cors": 20
+        "palanik/lumen-cors": 20,
+        "cbxtechcorp/lumen-api-routes-list": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

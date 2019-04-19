@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "CbxTechCorp/lumen-api-boilerplate-jwt",
+    "description": "Lumen Framework Rest API Boilerplate using JWT AUTH",
+    "keywords": ["framework", "laravel", "lumen", "microservice", "JWT", "REST", "API", "boilerplate", "api boilerplate"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -20,7 +20,8 @@
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "phpunit/phpunit": "~7.0",
-        "mockery/mockery": "~0.9"
+        "mockery/mockery": "~0.9",
+        "cbxtechcorp/lumen-api-routes-list": "dev-master"
     },
     "autoload": {
         "psr-4": {
