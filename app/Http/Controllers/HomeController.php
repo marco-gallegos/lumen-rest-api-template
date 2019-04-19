@@ -9,20 +9,29 @@ class HomeController extends BaseController{
 	 * 
 	 */
 	public function index(){
-		$api = app('Dingo\Api\Routing\Router');
+		$rows = [];
+        $api = app('Dingo\Api\Routing\Router');
 		//dump($api);
 		$routes = $api->getRoutes();
 		//dump($routes);
 
 		foreach ($routes as $version => $routeCollection) {
-			dump($version);
 			$versionRoutes = collect($routeCollection->getRoutes());
 			foreach ($versionRoutes as $ruta) {
-				$data = $ruta->getAction();
-				dump($data);
+                $data = $ruta->getAction();
+                $rows[] = [
+                    "host"      => "",
+                    "method"    => implode("|",$data["methods"]),
+                    "uri"       => $data["uri"],
+                    "name"      => (empty($data["as"]))? "":$data["as"],
+                    "action"    => $data["uses"],
+                    "protected" => "",
+                    "version"   => $version
+                ];
 			}
 		}
 
+		dump($rows);
 		return view('index', compact(["routes"]));
 	}
 }
