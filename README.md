@@ -21,20 +21,28 @@ lumen 5.x please look appropriate branch
 
 ## Installation
 
+### Usig GIT
+
 ``` bash
-$ git clone https://github.com/marco-gallegos/lumen-api-boilerplate-jwt.git
-$ composer install
-$ cp .env.example .env
-$ php artisan jwt:secret
-$ vim .env
+git clone https://github.com/marco-gallegos/lumen-api-boilerplate-jwt.git
+composer install
+cp .env.example .env
+php artisan jwt:secret
+vim .env
   DB_*
     configure your database access
   APP_KEY
     key:generate is abandoned in lumen, so do it yourself
     md5(uniqid())，str_random(32) etc.，maybe use jwt:secret and copy it
 
-$ php artisan migrate --seed
-$ generate api doc like this "apidoc -i App/Http/Controller/Api/v1 -o public/apidoc"
+php artisan migrate --seed
+generate api doc like this "apidoc -i App/Http/Controller/Api/v1 -o public/apidoc"
+```
+
+### Using Composer
+
+```bash
+composer create-project  --stability=dev cbxtechcorp/lumen-api-boilerplate-jwt new_api
 ```
 
 ## Main Features
@@ -101,3 +109,7 @@ $ generate api doc like this "apidoc -i App/Http/Controller/Api/v1 -o public/api
 
 ## License
 [MIT license](http://opensource.org/licenses/MIT)
+
+## Check the Original Project
+
+[Lumen API Demo](https://github.com/liyu001989/lumen-api-demo)
