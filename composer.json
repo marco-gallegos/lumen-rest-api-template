@@ -1,5 +1,5 @@
 {
-    "name": "CbxTechCorp/lumen-api-boilerplate-jwt",
+    "name": "cbxtechcorp/lumen-api-boilerplate-jwt",
     "description": "Lumen Framework Rest API Boilerplate using JWT AUTH",
     "keywords": ["framework", "laravel", "lumen", "microservice", "JWT", "REST", "API", "boilerplate", "api boilerplate"],
     "license": "MIT",
