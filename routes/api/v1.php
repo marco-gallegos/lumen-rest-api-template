@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -10,21 +9,22 @@
 | and give it the Closure to call when that URI is requested.
 |
  */
+$apiVersion = "v1";
 $api = app('Dingo\Api\Routing\Router');
-
 // v1 version API
-// add in header    Accept:application/vnd.lumen.v1+json
-$api->version('v1', [
-    'namespace' => 'App\Http\Controllers\Api\V1',
-    'middleware' => [
+$api->version($apiVersion, [
+    'namespace'     => 'App\Http\Controllers\Api\V1',
+    'middleware'    => [
         'cors',
         'serializer',
-         //'serializer:array', // if you want to remove data wrap
+        //'serializer:array', // if you want to remove data wrap
         'api.throttle',
     ],
     // each route have a limit of 20 of 1 minutes
-    'limit' => 20, 'expires' => 1,
-], function ($api) {
+    'limit'         => 20,
+    'expires'       => 1,
+    'prefix'        => "api/{$apiVersion}"
+], function ($api) {    
     // Auth
     // login
     $api->post('authorizations', [
@@ -32,41 +32,36 @@ $api->version('v1', [
         'uses' => 'AuthController@store',
     ]);
 
-    // User
-    $api->post('users', [
-        'as' => 'users.store',
-        'uses' => 'UserController@store',
-    ]);
-    // user list
-    $api->get('users', [
-        'as' => 'users.index',
-        'uses' => 'UserController@index',
-    ]);
-    // user detail
-    $api->get('users/{id}', [
-        'as' => 'users.show',
-        'uses' => 'UserController@show',
-    ]);
-
-    /*
-     * 对于authorizations 并没有保存在数据库，所以并没有id，那么对于
-     * 刷新（put) 和 删除（delete) 我没有想到更好的命名方式
-     * 所以暂时就是 authorizations/current 表示当前header中的这个token。
-     * 如果 tokekn 保存保存在数据库，那么就是 authorizations/{id}，像 github 那样。
+    /**
+     * For authorizations is not saved in the database, so there is no id, then for
+     * Refresh and delete (delete) I didn't think of a better way of naming
+     * So for the time being, authorizations/current represents the token in the current header.
+     * If tokekn save is stored in the database, then it is authorizations/{id}, like github.
      */
     $api->put('authorizations/current', [
         'as' => 'authorizations.update',
         'uses' => 'AuthController@update',
-    ]);
+        ]);
+        
+        // need authentication
+        $api->group(['middleware' => 'api.auth'], function ($api) {
 
-    // need authentication
-    $api->group(['middleware' => 'api.auth'], function ($api) {
-        /*
-         * 对于authorizations 并没有保存在数据库，所以并没有id，那么对于
-         * 刷新（put) 和 删除（delete) 我没有想到更好的命名方式
-         * 所以暂时就是 authorizations/current 表示当前header中的这个token。
-         * 如果 tokekn 保存保存在数据库，那么就是 authorizations/{id}，像 github 那样。
-         */
+        // User
+        $api->post('users', [
+            'as' => 'users.store',
+            'uses' => 'UserController@store',
+        ]);
+        // user list
+        $api->get('users', [
+            'as' => 'users.index',
+            'uses' => 'UserController@index',
+        ]);
+        // user detail
+        $api->get('users/{id}', [
+            'as' => 'users.show',
+            'uses' => 'UserController@show',
+        ]);
+
         $api->delete('authorizations/current', [
             'as' => 'authorizations.destroy',
             'uses' => 'AuthController@destroy',
