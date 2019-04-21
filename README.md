@@ -1,12 +1,10 @@
 # Lumen API Boilerplate with JWT Auth
 
-Forgive my poor English.
-
 This is a boilerplate for lumen 5.x if you are using lumen to write REST api it will help you.
 
-This demo use `dingo/api`  `tymon/jwt-auth` and write some easy APIs and PHPUNIT
+This project use `dingo/api`  `tymon/jwt-auth`.
 
-lumen 5.x please look appropriate branch
+Write some easy APIs.
 
 ## USEFUL LINKS
 
@@ -14,39 +12,51 @@ lumen 5.x please look appropriate branch
 - json-web-token(jwt) [https://github.com/tymondesigns/jwt-auth](https://github.com/tymondesigns/jwt-auth)
 - transformer [fractal](http://fractal.thephpleague.com/)
 - apidoc [apidocjs](http://apidocjs.com/)
-- rest api guidance [jsonapi.org](http://jsonapi.org/format/)
+- Rest API guidance [jsonapi.org](http://jsonapi.org/format/)
 - Rest API Debug [Insomnia](https://insomnia.rest/)
-- Debug Rest API [Postman](https://www.getpostman.com/)
-- a good article [http://oomusou.io/laravel/laravel-architecture](http://oomusou.io/laravel/laravel-architecture/)
+- A good article [http://oomusou.io/laravel/laravel-architecture](http://oomusou.io/laravel/laravel-architecture/)
 
 ## Installation
 
-### Usig GIT
+### 1 Install the project
+
+#### Using GIT
 
 ``` bash
-git clone https://github.com/marco-gallegos/lumen-api-boilerplate-jwt.git
+git clone https://github.com/marco-gallegos/lumen-api-boilerplate-jwt.git new_api
+cd new_api
 composer install
 cp .env.example .env
 php artisan jwt:secret
+```
+
+#### Using Composer
+
+```bash
+composer create-project --stability=dev cbxtechcorp/lumen-api-boilerplate-jwt new_api
+```
+
+### 2 configre your project
+
+Now give to your project access tou your database and create the users database with the default admin user.
+
+```bash
 vim .env
   DB_*
     configure your database access
   APP_KEY
     key:generate is abandoned in lumen, so do it yourself
     md5(uniqid())，str_random(32) etc.，maybe use jwt:secret and copy it
-
 php artisan migrate --seed
-generate api doc like this "apidoc -i App/Http/Controller/Api/v1 -o public/apidoc"
-```
-
-### Using Composer
-
-```bash
-composer create-project  --stability=dev cbxtechcorp/lumen-api-boilerplate-jwt new_api
 ```
 
 ## Main Features
 
+### Document your API
+
+```bash
+apidoc -i App/Http/Controller/Api/v1 -o public/apidoc
+```
 
 ## FAQ
 
@@ -106,6 +116,11 @@ composer create-project  --stability=dev cbxtechcorp/lumen-api-boilerplate-jwt n
 
 ## Tips
 
+Test the project
+
+```bash
+php -S localhost:8000 -t public
+```
 
 ## License
 [MIT license](http://opensource.org/licenses/MIT)
