@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f39b48fcfa79d5035f361630e445b41c",
+    "content-hash": "c11618855ea314def81841c3d2e35de9",
     "packages": [
         {
             "name": "dingo/api",
@@ -3040,16 +3040,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.2.0",
+            "version": "v6.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707"
+                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707",
-                "reference": "6fa3232ff9d3f8237c0fae4b7ff05e1baa4cd707",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
+                "reference": "5397cd05b0a0f7937c47b0adcb4c60e5ab936b6a",
                 "shasum": ""
             },
             "require": {
@@ -3098,7 +3098,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2019-03-10T07:52:41+00:00"
+            "time": "2019-04-21T09:21:45+00:00"
         },
         {
             "name": "symfony/console",
@@ -4511,16 +4511,16 @@
     "packages-dev": [
         {
             "name": "cbxtechcorp/lumen-api-routes-list",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/marco-gallegos/lumen-api-route-list.git",
-                "reference": "09e1ab904a6d3de6e66edf482e052f98035ae552"
+                "reference": "8cb172feab303fcf298ac50c9d8e496e55747698"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/marco-gallegos/lumen-api-route-list/zipball/09e1ab904a6d3de6e66edf482e052f98035ae552",
-                "reference": "09e1ab904a6d3de6e66edf482e052f98035ae552",
+                "url": "https://api.github.com/repos/marco-gallegos/lumen-api-route-list/zipball/8cb172feab303fcf298ac50c9d8e496e55747698",
+                "reference": "8cb172feab303fcf298ac50c9d8e496e55747698",
                 "shasum": ""
             },
             "require": {
@@ -4553,7 +4553,7 @@
                 "rest",
                 "route list"
             ],
-            "time": "2019-04-19T07:07:56+00:00"
+            "time": "2019-04-21T10:03:37+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -5238,16 +5238,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.5.8",
+            "version": "7.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c29c0525cf4572c11efe1db49a8b8aee9dfac58a"
+                "reference": "134669cf0eeac3f79bc7f0c793efbc158bffc160"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c29c0525cf4572c11efe1db49a8b8aee9dfac58a",
-                "reference": "c29c0525cf4572c11efe1db49a8b8aee9dfac58a",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/134669cf0eeac3f79bc7f0c793efbc158bffc160",
+                "reference": "134669cf0eeac3f79bc7f0c793efbc158bffc160",
                 "shasum": ""
             },
             "require": {
@@ -5318,7 +5318,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-03-26T13:23:54+00:00"
+            "time": "2019-04-19T15:50:46+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -5930,8 +5930,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "palanik/lumen-cors": 20,
-        "cbxtechcorp/lumen-api-routes-list": 20
+        "palanik/lumen-cors": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

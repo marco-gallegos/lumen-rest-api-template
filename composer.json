@@ -21,7 +21,7 @@
         "fzaninotto/faker": "~1.4",
         "phpunit/phpunit": "~7.0",
         "mockery/mockery": "~0.9",
-        "cbxtechcorp/lumen-api-routes-list": "dev-master"
+        "cbxtechcorp/lumen-api-routes-list": "^1.0"
     },
     "autoload": {
         "psr-4": {
