@@ -49,6 +49,10 @@
                 font-size: 84px;
             }
 
+            .title2 {
+                font-size: 2.2rem;
+            }
+
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -68,10 +72,15 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
+                    API REST
+                </div>
+                
+                <div class="title2 m-b-md">
                     {{ $app->version() }}
                 </div>
 
                 <div class="links">
+                        <a href="https://github.com/marco-gallegos/lumen-api-boilerplate-jwt">Repositorio</a>
                     <a href="https://lumen.laravel.com/docs/">Lumen</a>
                     <a href="https://jwt.io/">JWT</a>
                 </div>
