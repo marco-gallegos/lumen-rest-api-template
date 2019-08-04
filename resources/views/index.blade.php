@@ -80,7 +80,7 @@
                 </div>
 
                 <div class="links">
-                        <a href="https://github.com/marco-gallegos/lumen-api-boilerplate-jwt">Repositorio</a>
+                        <a href="https://github.com/marco-gallegos/lumen-api-boilerplate-jwt" target="_blank" >Repo</a>
                     <a href="https://lumen.laravel.com/docs/">Lumen</a>
                     <a href="https://jwt.io/">JWT</a>
                 </div>

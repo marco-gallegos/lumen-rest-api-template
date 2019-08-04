@@ -6,6 +6,24 @@ This project use `dingo/api`  `tymon/jwt-auth`.
 
 Write some easy APIs.
 
+## Main Features
+
+### Document your API
+
+```bash
+apidoc -i App/Http/Controller/Api/v1 -o public/apidoc
+```
+
+### List API Routes
+
+Not natively supported by lumen, we can list all our routes via [api:route](https://github.com/marco-gallegos/lumen-api-route-list) command
+
+```bash
+php artisan api:route
+```
+
+### 
+
 ## USEFUL LINKS
 
 - dingo/api [https://github.com/dingo/api](https://github.com/dingo/api)
@@ -38,25 +56,48 @@ composer create-project --stability=dev cbxtechcorp/lumen-api-boilerplate-jwt ne
 
 ### 2 configre your project
 
-Now give to your project access tou your database and create the users database with the default admin user.
+Now give to your project access tou your database and create the users table whit a test user.
 
 ```bash
 vim .env
   DB_*
     configure your database access
+  
   APP_KEY
     key:generate is abandoned in lumen, so do it yourself
     md5(uniqid())，str_random(32) etc.，maybe use jwt:secret and copy it
+
 php artisan migrate --seed
 ```
 
-## Main Features
+## Documentation
 
-### Document your API
+### Serve Your API
 
 ```bash
-apidoc -i App/Http/Controller/Api/v1 -o public/apidoc
+php -S localhost:8000 -t public
 ```
+
+### Deploy
+
+### Routes
+We have some routes to start.
+
+#### Login
+The login route returns access token to make any other request.
+
+route : http://your.domain/api/v1/authorizations
+
+type : post
+
+parameters : {
+  
+  email: "yourmail@some.com",
+
+  password: "userpassword"
+
+}
+
 
 ## FAQ
 
