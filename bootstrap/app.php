@@ -113,6 +113,10 @@ if (class_exists(CbxTechCorp\LumenApiRoutesList\ApiRoutesCommandServiceProvider:
     $app->register(CbxTechCorp\LumenApiRoutesList\ApiRoutesCommandServiceProvider::class);
 };
 
+//algunos comandos de laravel
+if(class_exists(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class)){
+    $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+}
 
 
 /*
