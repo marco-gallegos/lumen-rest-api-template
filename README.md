@@ -22,6 +22,19 @@ Not natively supported by lumen, we can list all our routes via [api:route](http
 php artisan api:route
 ```
 
+### Use Artisan Generators
+By default lumen does't support the useful laravel/artisan generators and using [this extension](https://github.com/flipboxstudio/lumen-generator) we can use this comands executing a "dev inclusive" composer install.
+
+Run:
+```bash
+composer install
+```
+
+Test:
+```bash
+php artisan make:model MyModel
+```
+
 ### 
 
 ## USEFUL LINKS
@@ -79,6 +92,10 @@ php -S localhost:8000 -t public
 ```
 
 ### Deploy
+In a production server we can omit development packages autoload using this command
+```bash
+composer install --no-dev
+```
 
 ### Routes
 We have some routes to start.
