@@ -43,8 +43,8 @@ $api->version($apiVersion, [
         'uses' => 'AuthController@update',
         ]);
         
-        // need authentication
-        $api->group(['middleware' => 'api.auth'], function ($api) {
+    // need authentication
+    $api->group(['middleware' => 'api.auth'], function ($api) {
 
         // User
         $api->post('users', [

@@ -4,3 +4,4 @@
 *.swp
 .php*
 !.php_cs.dist
+.idea/

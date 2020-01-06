@@ -24,7 +24,7 @@ $app = new Laravel\Lumen\Application(
     realpath(__DIR__.'/../')
 );
 
-// phpunit 报错？？？
+// phpunit 
 $app->withFacades();
 
 $app->withEloquent();
