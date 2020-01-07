@@ -2,12 +2,9 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-try {
-    $env = Dotenv\Dotenv::create(__DIR__."/../");
-    $env->load();
-} catch (Dotenv\Exception\InvalidPathException $e) {
-    //
-}
+(new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
+    dirname(__DIR__)
+))->bootstrap();
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +18,10 @@ try {
 */
 
 $app = new Laravel\Lumen\Application(
-    realpath(__DIR__.'/../')
+    dirname(__DIR__)
 );
 
-// phpunit 报错？？？
+// phpunit 
 $app->withFacades();
 
 $app->withEloquent();

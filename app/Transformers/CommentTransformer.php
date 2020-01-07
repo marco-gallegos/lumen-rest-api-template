@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use App\Models\Comment;
+use App\Comment;
 use League\Fractal\TransformerAbstract;
 
 class CommentTransformer extends TransformerAbstract

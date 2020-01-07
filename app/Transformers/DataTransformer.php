@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use App\Models\Data;
+use App\Data;
 
 class DataTransformer extends BaseTransformer
 {

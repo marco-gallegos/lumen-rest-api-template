@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        # esto no esta en el generado por el instalador pero lo dejare para ver que pedo
         Model::unguard();
 
         $this->call('UsersTableSeeder');

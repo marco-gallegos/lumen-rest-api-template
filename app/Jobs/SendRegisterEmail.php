@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Models\User;
+use App\User;
 
 class SendRegisterEmail extends Job
 {
