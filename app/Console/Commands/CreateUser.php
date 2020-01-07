@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
+use App\User;
 use Illuminate\Console\Command;
 
 class CreateUser extends Command

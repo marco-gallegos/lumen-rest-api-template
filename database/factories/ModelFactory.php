@@ -37,7 +37,7 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(App\Models\Post::class, function (Faker $faker) {
+$factory->define(App\Post::class, function (Faker $faker) {
     static $createdAt;
     static $userIds;
     $userIds = $userIds ?: User::pluck('id')->toArray();
@@ -51,13 +51,13 @@ $factory->define(App\Models\Post::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(App\Models\Comment::class, function (Faker $faker) {
+$factory->define(App\Comment::class, function (Faker $faker) {
     static $createdAt;
     static $userIds;
     static $postIds;
 
     $userIds = $userIds ?: User::pluck('id')->toArray();
-    $postIds = $postIds ?: App\Models\Post::pluck('id')->toArray();
+    $postIds = $postIds ?: App\Post::pluck('id')->toArray();
 
     return [
         'user_id' => $faker->randomElement($userIds),

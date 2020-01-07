@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Models\User;
+use App\User;
 use Illuminate\Http\Request;
-use App\Models\Authorization;
+use App\Authorization;
 use App\Jobs\SendRegisterEmail;
 use App\Transformers\UserTransformer;
 
