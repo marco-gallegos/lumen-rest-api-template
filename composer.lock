@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e8adc2c64a0e34c23707ac0149af9ee",
+    "content-hash": "d1ea6ff3bb1d1d696771e290f9884023",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -5447,8 +5447,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Utility class for timing",
