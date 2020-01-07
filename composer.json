@@ -7,15 +7,17 @@
     "require": {
         "php": "^7.2",
         "dingo/api": "^2.4",
-        "flipbox/lumen-generator": "^6.0",
         "illuminate/mail": "^6.0",
         "illuminate/redis": "^6.0",
         "laravel/lumen-framework": "^6.0",
+        "liyu/dingo-serializer-switch": "^0.3.1",
         "nesbot/carbon": "^2.28",
+        "palanik/lumen-cors": "dev-master",
         "tymon/jwt-auth": "^1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
+        "flipbox/lumen-generator": "^6.0",
         "phpunit/phpunit": "^8.0",
         "mockery/mockery": "^1.0",
         "cbxtechcorp/lumen-api-routes-list": "^1.0"
