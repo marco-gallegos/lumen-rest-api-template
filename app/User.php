@@ -1,18 +1,29 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Laravel\Lumen\Auth\Authorizable;
 
-class User extends BaseModel implements AuthenticatableContract, JWTSubject
+class User extends BaseModel implements AuthenticatableContract, JWTSubject, AuthorizableContract
 {
-    // 软删除和用户验证attempt
-    use SoftDeletes, Authenticatable;
+    // Eliminación suave y autenticación de usuario
+    use SoftDeletes, Authenticatable, Authorizable;
 
-    // 查询用户的时候，不暴露密码
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email',
+    ];
+
+    // No exponga las contraseñas al consultar a los usuarios.
     protected $hidden = ['password', 'deleted_at'];
 
     public function posts()
@@ -25,13 +36,13 @@ class User extends BaseModel implements AuthenticatableContract, JWTSubject
         return $this->hasMany(Comment::class);
     }
 
-    // jwt 需要实现的方法
+    // jwt Metodo a implementar
     public function getJWTIdentifier()
     {
         return $this->getKey();
     }
 
-    // jwt 需要实现的方法, 一些自定义的参数
+    // jwt Método a implementar, algunos parámetros personalizados
     public function getJWTCustomClaims()
     {
         return [];
