@@ -1,5 +1,10 @@
 <?php
 
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\User;
+use Faker\Generator as Faker;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -19,7 +24,7 @@ function randDate()
         ->subMinutes(rand(1, 60));
 }
 
-$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
+$factory->define(User::class, function (Faker $faker) {
     static $createdAt;
     static $password;
 
@@ -32,10 +37,10 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Post::class, function (Faker $faker) {
     static $createdAt;
     static $userIds;
-    $userIds = $userIds ?: App\Models\User::pluck('id')->toArray();
+    $userIds = $userIds ?: User::pluck('id')->toArray();
 
     return [
         'user_id' => $faker->randomElement($userIds),
@@ -46,12 +51,12 @@ $factory->define(App\Models\Post::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Models\Comment::class, function (Faker\Generator $faker) {
+$factory->define(App\Models\Comment::class, function (Faker $faker) {
     static $createdAt;
     static $userIds;
     static $postIds;
 
-    $userIds = $userIds ?: App\Models\User::pluck('id')->toArray();
+    $userIds = $userIds ?: User::pluck('id')->toArray();
     $postIds = $postIds ?: App\Models\Post::pluck('id')->toArray();
 
     return [
