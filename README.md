@@ -1,6 +1,6 @@
 # Lumen API Boilerplate with JWT Auth
 
-This is a boilerplate for lumen 5.x if you are using lumen to write REST api it will help you.
+This is a boilerplate for lumen 6.x if you are using lumen to write REST api it will help you.
 
 This project use `dingo/api`  `tymon/jwt-auth`.
 
@@ -25,10 +25,6 @@ php artisan api:route
 ### Use Artisan Generators
 By default lumen does't support the useful laravel/artisan generators and using [this extension](https://github.com/flipboxstudio/lumen-generator) we can use this comands executing a "dev inclusive" composer install.
 
-Run:
-```bash
-composer install
-```
 
 Test:
 ```bash
@@ -89,6 +85,8 @@ php artisan migrate --seed
 
 ```bash
 php -S localhost:8000 -t public
+# or
+php artisan serve
 ```
 
 ### Deploy
@@ -171,14 +169,6 @@ parameters : {
 ## TODO
 
 - [ ] phpunit
-
-## Tips
-
-Test the project
-
-```bash
-php -S localhost:8000 -t public
-```
 
 ## License
 [MIT license](http://opensource.org/licenses/MIT)
