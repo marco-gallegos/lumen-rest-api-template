@@ -54,9 +54,5 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": {
-        "liyu": {
-            "type": "path",
-            "url": "/Users/liyu/Code/dingo-serializer-switch"
-        }
     }
 }
