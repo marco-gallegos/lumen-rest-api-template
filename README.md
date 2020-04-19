@@ -6,6 +6,18 @@ This project use `dingo/api`  `tymon/jwt-auth`.
 
 Write some easy APIs.
 
+Checkout my other repo that is focused on reply this template but using graphql [lumen-graphql-api-template](https://github.com/marco-gallegos/lumen-graphql-api-template)
+
+## Useful Plugins
+
+if you'r using composer v1.x check [this project](https://github.com/hirak/prestissimo)
+
+```bash
+# instalar el plugin
+composer global require hirak/prestissimo
+```
+
+
 ## Main Features
 
 ### Document your API
@@ -23,10 +35,12 @@ php artisan api:route
 ```
 
 ### Use Artisan Generators
+
 By default lumen does't support the useful laravel/artisan generators and using [this extension](https://github.com/flipboxstudio/lumen-generator) we can use this comands executing a "dev inclusive" composer install.
 
 
 Test:
+
 ```bash
 php artisan make:model MyModel
 ```
@@ -90,15 +104,19 @@ php artisan serve
 ```
 
 ### Deploy
+
 In a production server we can omit development packages autoload using this command
+
 ```bash
 composer install --no-dev
 ```
 
 ### Routes
+
 We have some routes to start.
 
 #### Login
+
 The login route returns access token to make any other request.
 
 route : http://your.domain/api/v1/authorizations
