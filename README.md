@@ -1,4 +1,4 @@
-# Lumen API Boilerplate with JWT Auth
+# Lumen API Template/Boilerplate with JWT Auth
 
 This is a boilerplate for lumen 6.x if you are using lumen to write REST api it will help you.
 
@@ -6,7 +6,9 @@ This project use `dingo/api`  `tymon/jwt-auth`.
 
 Write some easy APIs.
 
-Checkout my other repo that is focused on reply this template but using graphql [lumen-graphql-api-template](https://github.com/marco-gallegos/lumen-graphql-api-template)
+Checkout my other repo that is focused on reply to this template but using graphql [lumen-graphql-api-template](https://github.com/marco-gallegos/lumen-graphql-api-template)
+
+Feel free to make a pull request and make this repo better :D
 
 ## Useful Plugins
 
