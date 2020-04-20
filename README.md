@@ -24,6 +24,9 @@ if you'r using composer v1.x check [this project](https://github.com/hirak/prest
 composer global require hirak/prestissimo
 ```
 
+## TODO
+
+- [ ] validar funcionamiento phpunit
 
 ## Main Features
 
@@ -71,7 +74,7 @@ php artisan make:model MyModel
 #### Using GIT
 
 ``` bash
-git clone https://github.com/marco-gallegos/lumen-api-boilerplate-jwt.git new_api
+git clone https://github.com/marco-gallegos/lumen-rest-api-template.git new_api
 cd new_api
 composer install
 cp .env.example .env
@@ -157,7 +160,7 @@ parameters : {
 </details>
 
 <details>
-  <summary>How to user transformer </summary>
+  <summary>How to use transformer </summary>
 
   transformer is a layer help you format you resource and their relationship.
 
@@ -189,11 +192,6 @@ parameters : {
 
   I think default DataArray is good enough.
 </details>
-
-
-## TODO
-
-- [ ] phpunit
 
 ## Check the Original Project
 
