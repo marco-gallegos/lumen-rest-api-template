@@ -1,5 +1,10 @@
 # Lumen API Template/Boilerplate with JWT Auth
 
+[![License](https://img.shields.io/github/license/marco-gallegos/lumen-rest-api-template?style=for-the-badge)](http://opensource.org/licenses/MIT)
+![PHP7.4](https://img.shields.io/badge/PHP-7.4-blue?style=for-the-badge)
+![LUMEN6.X](https://img.shields.io/badge/LUMEN-6.X-orange?style=for-the-badge)
+
+
 This is a boilerplate for lumen 6.x if you are using lumen to write REST api it will help you.
 
 This project use `dingo/api`  `tymon/jwt-auth`.
@@ -76,7 +81,7 @@ php artisan jwt:secret
 #### Using Composer
 
 ```bash
-composer create-project --stability=dev cbxtechcorp/lumen-api-boilerplate-jwt new_api
+composer create-project --stability=dev cbxtechcorp/lumen-rest-api-template new_api
 ```
 
 ### 2 configre your project
@@ -189,9 +194,6 @@ parameters : {
 ## TODO
 
 - [ ] phpunit
-
-## License
-[MIT license](http://opensource.org/licenses/MIT)
 
 ## Check the Original Project
 
