@@ -7,7 +7,14 @@
 
 This is a boilerplate for lumen 6.x if you are using lumen to write REST api it will help you.
 
-This project use `dingo/api`  `tymon/jwt-auth`.
+This project use:
+
+* [dingo/api](https://github.com/dingo/api)
+* [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth)
+* [palanik/lumen-cors](https://github.com/palanik/lumen-cors)
+* [flipboxstudio/lumen-generator](https://github.com/flipboxstudio/lumen-generator)
+* [cbxtechcorp/lumen-api-routes-list](https://github.com/marco-gallegos/lumen-api-route-list)
+
 
 Write some easy APIs.
 
