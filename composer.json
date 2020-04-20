@@ -43,6 +43,7 @@
     "scripts": {
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\"",
+            "composer install",
             "php artisan jwt:secret"
         ]
     },
