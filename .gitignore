@@ -4,6 +4,7 @@
 .php*
 !.php_cs.dist
 .idea/
+.vscode
 
 /vendor/
 node_modules/

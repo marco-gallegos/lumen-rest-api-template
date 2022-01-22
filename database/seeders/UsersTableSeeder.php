@@ -1,7 +1,10 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\User;
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,8 +19,8 @@ class UsersTableSeeder extends Seeder
             'name' => "Administrador",
             'email' => "admin@admin.com.mx",
             'password' => app('hash')->make("admin12345"),
-            'created_at' => Carbon\Carbon::now(),
-            'updated_at' => Carbon\Carbon::now(),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ]);
     }
 }

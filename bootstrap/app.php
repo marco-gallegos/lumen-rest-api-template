@@ -55,6 +55,19 @@ $app->singleton(
 
 /*
 |--------------------------------------------------------------------------
+| Register Config Files
+|--------------------------------------------------------------------------
+|
+| Now we will register the "app" configuration file. If the file exists in
+| your configuration directory it will be loaded; otherwise, we'll load
+| the default version. You may register other files below as needed.
+|
+*/
+
+$app->configure('app');
+
+/*
+|--------------------------------------------------------------------------
 | Register Middleware
 |--------------------------------------------------------------------------
 |
@@ -104,11 +117,6 @@ $app->register(App\Providers\AuthServiceProvider::class);
 $app->singleton(Illuminate\Auth\AuthManager::class, function ($app) {
     return $app->make('auth');
 });
-
-//list api routes
-if (class_exists(CbxTechCorp\LumenApiRoutesList\ApiRoutesCommandServiceProvider::class)) {
-    $app->register(CbxTechCorp\LumenApiRoutesList\ApiRoutesCommandServiceProvider::class);
-};
 
 //algunos comandos de laravel
 if(class_exists(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class)){
