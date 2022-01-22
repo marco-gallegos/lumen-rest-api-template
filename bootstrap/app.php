@@ -86,6 +86,9 @@ $app->routeMiddleware([
     'cors' => palanik\lumen\Middleware\LumenCors::class,
     'auth' => App\Http\Middleware\Authenticate::class,
     'serializer' => \Liyu\Dingo\SerializerSwitch::class,
+    //spatie permission
+    'permission' => Spatie\Permission\Middlewares\PermissionMiddleware::class,
+    'role'       => Spatie\Permission\Middlewares\RoleMiddleware::class,
 ]);
 
 /*
@@ -122,6 +125,11 @@ $app->singleton(Illuminate\Auth\AuthManager::class, function ($app) {
 if(class_exists(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class)){
     $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 }
+
+//spatie permission
+$app->configure('permission');
+$app->alias('cache', \Illuminate\Cache\CacheManager::class);  // if you don't have this already
+$app->register(Spatie\Permission\PermissionServiceProvider::class);
 
 
 /*

@@ -8,11 +8,13 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Laravel\Lumen\Auth\Authorizable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends BaseModel implements AuthenticatableContract, JWTSubject, AuthorizableContract
 {
     // Eliminación suave y autenticación de usuario
     use SoftDeletes, Authenticatable, Authorizable;
+    use HasRoles;
 
     /**
      * The attributes that are mass assignable.

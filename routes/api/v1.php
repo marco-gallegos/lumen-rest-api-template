@@ -85,6 +85,6 @@ $api->version($apiVersion, [
             'uses' => 'UserController@editPassword',
         ]);
 
-        
+        require("permission.php");
     });
 });
