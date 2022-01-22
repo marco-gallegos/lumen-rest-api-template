@@ -11,6 +11,7 @@
  */
 $apiVersion = "v1";
 $api = app('Dingo\Api\Routing\Router');
+
 // v1 version API
 $api->version($apiVersion, [
     'namespace'     => 'App\Http\Controllers\Api\V1',
@@ -18,7 +19,7 @@ $api->version($apiVersion, [
         'cors',
         'serializer',
         //'serializer:array', // if you want to remove data wrap
-        'api.throttle',
+        //'api.throttle',
     ],
     // each route have a limit of 20 of 1 minutes
     'limit'         => 20,
@@ -45,46 +46,7 @@ $api->version($apiVersion, [
         
     // need authentication
     $api->group(['middleware' => 'api.auth'], function ($api) {
-
-        // User
-        $api->post('users', [
-            'as' => 'users.store',
-            'uses' => 'UserController@store',
-        ]);
-        // user list
-        $api->get('users', [
-            'as' => 'users.index',
-            'uses' => 'UserController@index',
-        ]);
-        // user detail
-        $api->get('users/{id}', [
-            'as' => 'users.show',
-            'uses' => 'UserController@show',
-        ]);
-
-        $api->delete('authorizations/current', [
-            'as' => 'authorizations.destroy',
-            'uses' => 'AuthController@destroy',
-        ]);
-
-        // USER
-        // my detail
-        $api->get('user', [
-            'as' => 'user.show',
-            'uses' => 'UserController@userShow',
-        ]);
-
-        // update part of me
-        $api->patch('user', [
-            'as' => 'user.update',
-            'uses' => 'UserController@patch',
-        ]);
-        // update my password
-        $api->put('user/password', [
-            'as' => 'user.password.update',
-            'uses' => 'UserController@editPassword',
-        ]);
-
+        require("user.php");
         require("permission.php");
     });
 });

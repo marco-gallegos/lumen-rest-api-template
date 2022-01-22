@@ -15,7 +15,8 @@ class PermissionController extends BaseController
      */
     public function index()
     {
-        $permission = Permission::all();
+        $user = $this->user();
+        $permission = $user->permissions;
         return response()->json($permission);
     }
     
@@ -28,6 +29,7 @@ class PermissionController extends BaseController
     public function store(Request $request)
     {
         $permission = Permission::create(['name' => $request->name]);
+        return response()->json($permission);
     }
     
     /**
@@ -36,11 +38,26 @@ class PermissionController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function assign(Request $request)
+    public function grant(Request $request)
     {
         $user = User::findOrFail($request->user_id);
         $permission = Permission::findOrFail($request->permission_id);
         $user->givePermissionTo($permission);
+        return $this->response->noContent();
+    }
+    
+    /**
+     * Revoke a permission to a user.
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function revoke(Request $request)
+    {
+        $user = User::findOrFail($request->user_id);
+        $permission = Permission::findOrFail($request->permission_id);
+        $user->revokePermissionTo($permission);
+        return $this->response->noContent();
     }
 
     /**

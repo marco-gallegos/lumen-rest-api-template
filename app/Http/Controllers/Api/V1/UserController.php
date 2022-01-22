@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Authorization;
 use App\Jobs\SendRegisterEmail;
 use App\Transformers\UserTransformer;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends BaseController
 {
@@ -93,14 +95,16 @@ class UserController extends BaseController
             'password' => $request->get('old_password'),
         ]);
 
+        
         if (! $auth) {
             return $this->response->errorUnauthorized();
         }
-
+        
         $password = app('hash')->make($request->get('password'));
         $user->update(['password' => $password]);
+        $user->save();
 
-        return $this->response->noContent();
+        return response()->json();
     }
 
     /**
@@ -174,7 +178,7 @@ class UserController extends BaseController
      */
     public function patch(Request $request)
     {
-        $validator = \Validator::make($request->input(), [
+        $validator = Validator::make($request->input(), [
             'name' => 'string|max:50',
             'avatar' => 'url',
         ]);
@@ -217,11 +221,12 @@ class UserController extends BaseController
      */
     public function store(Request $request)
     {
-        $validator = \Validator::make($request->input(), [
+        $validator = Validator::make($request->input(), [
             'email' => 'required|email|unique:users',
             'name' => 'required|string',
             'password' => 'required',
         ]);
+
 
         if ($validator->fails()) {
             return $this->errorBadRequest($validator);
@@ -237,8 +242,9 @@ class UserController extends BaseController
         ];
         $user = User::create($attributes);
 
-        // 用户注册成功后发送邮件
-        dispatch(new SendRegisterEmail($user));
+        //TODO: not work
+        // Send email after successful user registration
+        //dispatch(new SendRegisterEmail($user));
 
         // 201 with location
         $location = dingo_route('v1', 'users.show', $user->id);
@@ -246,5 +252,30 @@ class UserController extends BaseController
         return $this->response->item($user, new UserTransformer())
             ->header('Location', $location)
             ->setStatusCode(201);
+    }
+
+    /**
+     * delete user.
+     *TODO:implement
+     * @param request $request
+     * @return void
+     */
+    public function delete(request $request)
+    {
+        $user = User::findOrFail($request->get('user_id'));
+        $user->delete();
+        return $this->response->noContent();
+    }
+    
+    /**
+     * reactivate deleted user.
+     *
+     * @param request $request
+     * @return void
+     */
+    public function reactivate(request $request)
+    {
+        //TODO: implement
+        return $this->response->noContent();
     }
 }

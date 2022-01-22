@@ -22,11 +22,11 @@ class User extends BaseModel implements AuthenticatableContract, JWTSubject, Aut
      * @var array
      */
     protected $fillable = [
-        'name', 'email',
+        'name', 'email', 'password'
     ];
 
     // No exponga las contraseñas al consultar a los usuarios.
-    protected $hidden = ['password', 'deleted_at'];
+    protected $hidden = ['password'];
 
     public function posts()
     {
