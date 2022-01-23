@@ -1,11 +1,11 @@
 # Lumen API Template/Boilerplate with JWT Auth
 
 [![License](https://img.shields.io/github/license/marco-gallegos/lumen-rest-api-template?style=for-the-badge)](http://opensource.org/licenses/MIT)
-![PHP7.4](https://img.shields.io/badge/PHP-7.4-blue?style=for-the-badge)
-![LUMEN6.X](https://img.shields.io/badge/LUMEN-6.X-orange?style=for-the-badge)
+![PHP8](https://img.shields.io/badge/PHP-8-blue?style=for-the-badge)
+![LUMEN8.X](https://img.shields.io/badge/LUMEN-8.X-orange?style=for-the-badge)
 
 
-This is a boilerplate for lumen 6.x if you are using lumen to write REST api it will help you.
+This is a boilerplate for lumen 8.x if you are using lumen to write REST api it will help you.
 
 This project use:
 
@@ -13,7 +13,6 @@ This project use:
 * [tymon/jwt-auth](https://github.com/tymondesigns/jwt-auth)
 * [palanik/lumen-cors](https://github.com/palanik/lumen-cors)
 * [flipboxstudio/lumen-generator](https://github.com/flipboxstudio/lumen-generator)
-* [cbxtechcorp/lumen-api-routes-list](https://github.com/marco-gallegos/lumen-api-route-list)
 
 
 Write some easy APIs.
@@ -22,18 +21,10 @@ Checkout my other repo that is focused on reply to this template but using graph
 
 Feel free to make a pull request and make this repo better :D
 
-## Useful Plugins
-
-if you'r using composer v1.x check [this project](https://github.com/hirak/prestissimo)
-
-```bash
-# instalar el plugin
-composer global require hirak/prestissimo
-```
-
 ## TODO
 
-- [ ] validar funcionamiento phpunit
+- [ ] docker
+- [ ] phpunit validation
 
 ## Main Features
 
@@ -41,14 +32,6 @@ composer global require hirak/prestissimo
 
 ```bash
 apidoc -i App/Http/Controller/Api/v1 -o public/apidoc
-```
-
-### List API Routes
-
-Not natively supported by lumen, we can list all our routes via [api:route](https://github.com/marco-gallegos/lumen-api-route-list) command
-
-```bash
-php artisan api:route
 ```
 
 ### Use Artisan Generators
@@ -91,7 +74,7 @@ php artisan jwt:secret
 #### Using Composer
 
 ```bash
-composer create-project --stability=dev cbxtechcorp/lumen-rest-api-template new_api
+composer create-project --stability dev cbxtechcorp/lumen-rest-api-template new_api
 ```
 
 ### 2 configre your project
@@ -115,9 +98,9 @@ php artisan migrate --seed
 ### Serve Your API
 
 ```bash
-php -S localhost:8000 -t public
-# or
 php artisan serve
+# or
+php -S localhost:8000 -t public
 ```
 
 ### Deploy
@@ -132,22 +115,8 @@ composer install --no-dev
 
 We have some routes to start.
 
-#### Login
-
-The login route returns access token to make any other request.
-
-route : http://your.domain/api/v1/authorizations
-
-type : post
-
-parameters : {
-  
-  email: "yourmail@some.com",
-
-  password: "userpassword"
-
-}
-
+- api/v1/users
+- api/v1/permission
 
 ## FAQ
 
